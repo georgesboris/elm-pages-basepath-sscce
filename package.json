@@ -1,0 +1,23 @@
+{
+  "name": "elm-pages-app",
+  "type": "module",
+  "scripts": {
+    "postinstall": "elm-tooling install",
+    "start": "elm-pages dev --base base-path",
+    "test": "elm-pages build --debug --base base-path && git diff --exit-code ./dist",
+    "serve": "npm run build && mv ./dist/* ./dist/base-path/ && http-server ./dist -a localhost -p 3000 -c-1",
+    "build": "elm-pages build --base base-path"
+  },
+  "devDependencies": {
+    "elm-codegen": "^0.3.0",
+    "elm-optimize-level-2": "^0.3.5",
+    "elm-pages": "^3.0.3",
+    "elm-review": "^2.10.2",
+    "elm-tooling": "^1.14.0",
+    "http-server": "^14.1.1",
+    "vite": "^4.3.5"
+  },
+  "dependencies": {
+    "@netlify/functions": "^1.4.0"
+  }
+}
